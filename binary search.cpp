@@ -17,7 +17,7 @@ int main()
           { cout<<"Found At "<<mid<<endl;
            return 0;}
            
-            else if (key<A[mid])
+            else if (key>A[mid])
             h=mid-1;
 
             else l=mid+1;
