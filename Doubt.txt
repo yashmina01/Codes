@@ -1,0 +1,3 @@
+//If we want to iterate rest of increased index from start again i.e (i=0)
+
+i = [i +(increased by)] % array/vector size;
