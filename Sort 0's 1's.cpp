@@ -24,10 +24,10 @@ int sortOne(int arr[],int n){
     }
 }
 
-
 int main(){
 
     int arr[8] = {1,0,1,0,0,1,0,1};
     sortOne(arr , 8);
     printArray(arr, 8);
 }
+
