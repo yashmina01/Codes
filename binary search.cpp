@@ -1,29 +1,27 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
-    int A[9]={1,4,7,9,11,12,14,17,19};
-    int l=0,h=8,mid,key;
-
-    cout<<"Enter Key "<<endl;
-    cin>>key;
-
-    while(l<=h)
-    {
-        mid=(l+h)/2;
-        {
-            if(key==A[mid])
-          { cout<<"Found At "<<mid<<endl;
-           return 0;}
-           
-            else if (key>A[mid])
-            h=mid-1;
-
-            else l=mid+1;
-         }
-        }
-        cout<<"Not Found "<<endl;
-        return 0;
-
+int binarySearch(int arr[], int n, int key){
+    int low=0,high=n-1,mid;
+    while(low<=high){
+        mid = (low + high)/2;
+        if(key == arr[mid])
+        return mid;
+        else if(key > arr[mid])
+        return low = mid+1;
+        else if(key != arr[mid])
+        return -1;
+        else return high = mid-1;
     }
+
+
+}
+int main(){
+    int a[8] = {2,3,5,8,9,10,15,20};
+    int b[7] = {1,4,6,9,13,15,21};
+    
+    cout<<binarySearch(a,8,-43)<<endl;
+    cout<<binarySearch(b,7,15)<<endl;
+
+
+}
