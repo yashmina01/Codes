@@ -2,16 +2,18 @@
 using namespace std;
 
 int pivotIndex(int arr[],int n) {
-    int s=0,e=n-1;
-    int mid = s + (e-s)/2;
-    while(s<e) {
-        mid = s + (e-s)/2;
-        if(arr[mid] >= arr[0])
-        s = mid+1;
+    int start=0,end=n-1;
+    int mid = start + (end-start)/2;
 
-        else e = mid;
+    while(start<end) {
+        
+        mid = start + (end-start)/2;
+        if(arr[mid] >= arr[0])
+        start = mid+1;
+
+        else end = mid;
     }
-    return s;
+    return start;
 }
 
 int main() {
