@@ -1,46 +1,45 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool isPossible(vector<int> woods,int n,int h,int mid) {
+bool isPossible(long long int woods[],long long int n,long long int m,long long int mid) {
+	long long int sumHeight = 0;
 
-    int sumHeight = 0;
-    
-    for(int i=0;i<n;i++) {
+	for(long long int i=0;i<n;i++) {
+		if(woods[i] > mid) {
+			sumHeight += woods[i] - mid;
+		}
+	}
 
-        if(woods[i] > mid) {
-            sumHeight += woods[i] - mid;
-            if(sumHeight == h)
-        {
-            return true;
-        }
-        }
-        
-    }
-    return false;
+		if(sumHeight >= m)
+		return true;
+		else 
+		return false;
 }
 
 int main() {
-    vector<int> woods = {20,15,10,17};
-    int n = woods.size();
-    int sum=0,h = 7;
-    int ans = -1;
+	long long int n,m,sum=0;
+	cin>>n>>m;
 
-    for(int i=0;i<n;i++) {
-        sum+=woods[i];
-    }
+	long long int woods[n];
+	for(long long int i=0;i<n;i++) {
+		cin>>woods[i];
+	}
+	for(long long int i=0;i<n;i++) {
+		sum += woods[i];
+	}
 
-    int start=0,end=sum;
-    int mid = start + (end-start)/2;
+	long long int start = 0,end = sum,ans;
+	long long int mid = start + (end-start)/2;
 
-    while(start <= end) {
-        mid = start + (end-start)/2;
+	while(start <= end) {
+		mid = start + (end - start)/2;
 
-        if(isPossible(woods,n,h,mid) ) {
-            ans = mid;
-            start = mid + 1;
-        }
-        else end = mid - 1;
-    }
-    cout<<ans<<endl;
-
+		if(isPossible(woods,n,m,mid)) {
+			ans = mid;
+			start = mid + 1;
+		}
+		else end = mid - 1;
+	}
+	cout<<ans;
+	return 0;
 }
