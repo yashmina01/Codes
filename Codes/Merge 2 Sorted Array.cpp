@@ -19,8 +19,9 @@ int main() {
     int n=v1.size()-1;
     int m=v2.size()-1;
     int i=0,j=0;
-
-    while( i<n && j<m){
+ 
+ 
+    while( i<=n && j<=m){
         if(v1[i] <= v2[j]){
             v3.push_back(v1[i++]);
         }
