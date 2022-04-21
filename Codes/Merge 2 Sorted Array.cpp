@@ -9,8 +9,6 @@ using namespace std;
         cout<<x<<" ";
     }
 
-
-
 int main() {
     vector<int> v1 = {1,4,8,10,12};
     vector<int> v2 = {2,5,7,11};
@@ -38,5 +36,4 @@ int main() {
     }
 
     printArray(v3);
-
 }
