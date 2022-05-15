@@ -49,8 +49,12 @@ int lastOcc(vector<int> arr,int key){
 
 
 int main(){
+    int n; cin>>n;
+    vector <int> arr(n);
 
-    vector <int> arr = {1,2,3,4,4,4,5,6,7};
+    for(int i=0;i<n;i++)
+    cin>>arr[i];
+
     cout<<"Enter Key "<<endl;
     int key; cin>>key;
 
