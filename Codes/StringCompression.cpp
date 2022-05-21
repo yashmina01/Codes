@@ -8,22 +8,23 @@ int stringCompress(string chars){
 	int n = chars.size();
 
 	while(i < n){
-		int j = i+1;
+		int j = i+1;							
 
 		while(j < n && chars[i] == chars[j])
 		{
-			j++;
+			j++;								//couting the reapeated character
 		}
-		chars[ansIndex++] = chars[i];
+
+		chars[ansIndex++] = chars[i];			//putting character in array before it's count
 		
-		int count = j-i;
-		if(count > 1){
-			string cnt = to_string(count);
+		int count = j-i;						
+		if(count > 1){							//here we are converting counts of character to string and inserting in array
+			string cnt = to_string(count);		//as by doing so counts >10 can easily be written as 1 0 array
 			for(auto counting: cnt){
 				chars[ansIndex++] = counting;
 			}
 		}
-		i=j;
+		i=j;									//changing the character
 	}
 	return ansIndex;
 
