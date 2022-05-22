@@ -13,7 +13,7 @@ bool isPresent (int arr[][3] , int target , int i,int j){
     return 0;
 }
 
-int main(){
+int main(){                                             //Time Complexity - O(row*columns)
     int arr[3][3];
 
     for(int i=0;i<3;i++){
