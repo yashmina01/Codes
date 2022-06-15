@@ -4,5 +4,6 @@
         "iostream": "cpp",
         "random": "cpp"
     },
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "C_Cpp.errorSquiggles": "Enabled"
 }
