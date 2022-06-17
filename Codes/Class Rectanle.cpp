@@ -19,7 +19,7 @@ class rectangle
         lenght = l;
         breadth = b;
     }
-    rectangle(rectangle &r)
+        rectangle(rectangle &r)
     {
         lenght = r.lenght;
         breadth = r.breadth;
