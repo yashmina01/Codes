@@ -27,14 +27,22 @@ void insertAtTail(Node* &tail,int d){
     tail = temp;
 }
 
-void insertAtPosition(Node* &head,int position,int d){
+void insertAtPosition(Node* &head,Node* &tail,int position,int d){
     
-    Node* temp = head;
+    if(position == 1){                 //If we tried to add node to position 1(Head) by insertAtPosition function then 
+        insertAtHead(head,d);          //as if have started this temp node from head, 
+    }
+
+    Node* temp = head;              
     int count = 1;
 
-    while(count < position-1){
+    while(count < position-1){              
         temp = temp->next;
         count++;
+    }
+
+    if(temp->next == NULL){             //That means we trying to insert node at last position (TAIL),mgr wha tail update krrni pdegii NULL se
+        insertAtTail(tail,d);           //so we called the Function -> insertAtTail which insert and also updates the tail 
     }
 
     //Create New Node For Inserting
@@ -74,7 +82,7 @@ int main() {
     print(head);
 
     cout<<"Inserting 50 At 3rd Position"<<endl;
-    insertAtPosition(head,3,50);
+    insertAtPosition(head,tail,3,50);
     print(head);
 
     return 0;
