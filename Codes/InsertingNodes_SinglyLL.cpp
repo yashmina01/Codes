@@ -20,47 +20,47 @@ void insertAtHead(Node* &head,int d){
     head = temp;                        //Making (temp Data) as Head 
 }
 
-void insertAtTail(Node* &tail,int d){
+    void insertAtTail(Node* &tail,int d){
 
-    Node* temp = new Node(d);
-    tail->next = temp;
-    tail = temp;
-}
-
-void insertAtPosition(Node* &head,Node* &tail,int position,int d){
-    
-    if(position == 1){                 //If we tried to add node to position 1(Head) by insertAtPosition function then 
-        insertAtHead(head,d);          //as if have started this temp node from head, 
+        Node* temp = new Node(d);
+        tail->next = temp;
+        tail = temp;
     }
 
-    Node* temp = head;              
-    int count = 1;
+    void insertAtPosition(Node* &head,Node* &tail,int position,int d){
+        
+        if(position == 1){                 //If we tried to add node to position 1(Head) by insertAtPosition function then 
+            insertAtHead(head,d);          //as if have started this temp node from head, 
+        }
 
-    while(count < position-1){              
-        temp = temp->next;
-        count++;
+        Node* temp = head;              
+        int count = 1;
+
+        while(count < position-1){              
+            temp = temp->next;
+            count++;
+        }
+
+        if(temp->next == NULL){             //That means we trying to insert node at last position (TAIL),mgr wha tail update krrni pdegii NULL se
+            insertAtTail(tail,d);           //so we called the Function -> insertAtTail which insert and also updates the tail 
+        }
+
+        //Create New Node For Inserting
+        Node* nodeToInsert = new Node(d);
+        nodeToInsert ->next = temp ->next;
+        temp ->next = nodeToInsert;
+
     }
 
-    if(temp->next == NULL){             //That means we trying to insert node at last position (TAIL),mgr wha tail update krrni pdegii NULL se
-        insertAtTail(tail,d);           //so we called the Function -> insertAtTail which insert and also updates the tail 
+    void print(Node* &head){
+        Node* temp = head;                  //For Traversal Of Linklist ,temp Node is created pointing head
+
+        while(temp != NULL){                //Loop qill continue till (temp->next) reaches NULL 
+            cout<< temp->data <<" ";        //(temp->data) will be printed
+            temp = temp->next;              //For moving to next node ==> that (temp->next) contains address of next node,we will change that every time
+        }
+        cout<<endl;
     }
-
-    //Create New Node For Inserting
-    Node* nodeToInsert = new Node(d);
-    nodeToInsert ->next = temp ->next;
-    temp ->next = nodeToInsert;
-
-}
-
-void print(Node* &head){
-    Node* temp = head;                  //For Traversal Of Linklist ,temp Node is created pointing head
-
-    while(temp != NULL){                //Loop qill continue till (temp->next) reaches NULL 
-        cout<< temp->data <<" ";        //(temp->data) will be printed
-        temp = temp->next;              //For moving to next node ==> that (temp->next) contains address of next node,we will change that every time
-    }
-    cout<<endl;
-}
 
 int main() {
     Node* node1 = new Node(10);
