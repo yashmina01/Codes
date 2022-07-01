@@ -2,7 +2,9 @@
     "files.associations": {
         "ostream": "cpp",
         "iostream": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "array": "cpp",
+        "string": "cpp"
     },
     "git.ignoreLimitWarning": true,
     "C_Cpp.errorSquiggles": "Enabled"
