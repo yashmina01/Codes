@@ -4,7 +4,8 @@
         "iostream": "cpp",
         "random": "cpp",
         "array": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "cmath": "cpp"
     },
     "git.ignoreLimitWarning": true,
     "C_Cpp.errorSquiggles": "Enabled"
