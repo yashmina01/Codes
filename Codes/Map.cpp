@@ -9,6 +9,8 @@ int main() {
    m[10] = "!!!!";
    m[1] = "hye";
 
+    auto f = m.begin()->second;
+    cout<<f<<endl;
    for(auto x : m){
        cout<<x.first<<" "<<x.second<<endl;
    }

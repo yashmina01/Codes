@@ -1,19 +1,60 @@
 {
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
 	"": {
 		"prefix": "cc",
 		"body": [
 		  "#include <bits/stdc++.h>",
 		  "using namespace std;",
 		  "#define ll long long int",
-		  "#define vi vector<int> ",
+		  "#define mod 1000000007",
+		  "#define pll pair<ll,ll>",
+		  "#define pii pair<int ,int>",
+		  "#define vb vector<bool>",
+		  "#define vs vector<string>",
+		  "#define vll vector<ll>",
+		  "#define vpll vector<pll>",
+		  "#define vpii vector<pii>",
+		  "#define vvll vector<vector<ll>>",
+		  "#define all(a) a.begin(),a.end()",
+		  "#define yes cout << \"YES\" << endl;",
+		  "#define no cout << \"NO\" << endl;",
+		  "",
+		  "ll lcm(ll a, ll b){return (a * b)/__gcd(a, b);}",
+		  "",
+		  "bool _isPrime(ll n){",
+			  "if (n == 1 ) return 0;",
+			  "if (n == 2 || n == 3) return 1;",
+			  "if ((n & 1) == 0) return 0;",
+			  "if (n % 3 == 0)return 0;",
+			  "for (ll i = 5; i * i <= n; i += 6){",
+				  "if (n % i == 0 || n % (i + 2) == 0) return 0;",
+			  "}",
+			  "return 1;",
+		  "}",
+		  "",
+		  "void google(int i) {cout<<\"Case #\"<<i<<\": \";}",
 		  "",
 		  "int main() {",
-		  "    int t;",
-		  "    cin>>t;",
-		  "    while(t--) {",
-		  "",
+		  "    int T;",
+		  "    cin>>T;",
+		  "    for (int i=1; i<=T; i++) {",
+		  "        ",
 		  "    }",
-		  "    return 0;",
 		  "}"
 		],
 		"description": ""
